@@ -1,9 +1,22 @@
-# PacVim
+# MazeVim
 
-PacVim is a game that teaches you vim commands.
-You must move pacman (the green cursor) to highlight each word on the gameboard while avoiding the ghosts (in red).
+MazeVim is a fork of PacVim, to make it easy to create and solve mazes,
+and in the process, get used to the basic vim movement commands.
 
-![my image](https://raw.githubusercontent.com/jmoon018/PacVim/master/gifs/all.gif)
+PacVim is a lot more challenging; MazeVim allows the absolute Vim beginner to HJKL movement,
+without necessarily the added stress of having to avoid ghosts - however, you can still add them to the maps if you want.
+
+Edit `maps/*.txt` to construct the mazes; walls are '#' while ' ' are passages. The goal is to get to the x.
+Movement commands:
+
+```
+    ^
+    k       The h key is at the left and moves left.
+< h   l >   The l key is at the right and moves right.
+    j       The j key looks like a down arrow.
+    v
+```
+
 # Building and running
 
 Vim is a great tool to write and edit code, but many 

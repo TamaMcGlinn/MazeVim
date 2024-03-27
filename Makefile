@@ -1,7 +1,7 @@
-TARGET     =  pacvim
+TARGET     =  mazevim
 PREFIX    ?=  /usr/local
 BINDIR     =  $(PREFIX)/bin
-MAPDIR     =  $(PREFIX)/share/pacvim-maps
+MAPDIR     =  $(PREFIX)/share/mazevim-maps
 OBJS      :=  $(patsubst %.cpp,%.o,$(wildcard src/*.cpp))
 MAPS      :=  $(wildcard maps/*)
 CXX       ?=  g++
