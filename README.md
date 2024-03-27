@@ -3,7 +3,7 @@
 MazeVim is a fork of PacVim, to make it easy to create and solve mazes,
 and in the process, get used to the basic vim movement commands.
 
-PacVim is a lot more challenging; MazeVim allows the absolute Vim beginner to HJKL movement,
+PacVim is a lot more challenging; MazeVim allows the absolute Vim beginner to learn HJKL movement
 without necessarily the added stress of having to avoid ghosts - however, you can still add them to the maps if you want.
 
 Edit `maps/*.txt` to construct the mazes; walls are '#' while ' ' are passages. The goal is to get to the x.
@@ -22,16 +22,13 @@ Movement commands:
 Vim is a great tool to write and edit code, but many 
 people, including me, struggled with the steep learning curve. 
 I did not find a fun, free way to learn about the vim commands
-in-depth, and thus, PacVim was born. Inspired by the classic,
-PacMan, <b>PacVim</b> is a game that'll give anyone plenty of
+in-depth, and thus, PacVim and MazeVim were born. Inspired by the classic,
+PacMan, <b>MazeVim</b> is a game that'll give anyone plenty of
 practice with the vim commands while being a ton of fun to play.
 
 Download and build the game with:
 
-## Mac OS X
-`brew install pacvim`
-
-## Linux (and Mac OS X alternative)
+## Linux and Mac OS X
 
 1. Download and install Curses (graphics library) <br>
 	-> For Ubuntu (in terminal): `sudo apt-get install libncurses5-dev` <br>
@@ -46,40 +43,18 @@ Download and build the game with:
 
 
 ```
-2. git clone https://github.com/jmoon018/PacVim.git
-3. cd PacVim
+2. git clone https://github.com/TamaMcGlinn/MazeVim.git
+3. cd MazeVim
 4. [sudo] make install
-```
-
-## Using Docker
-
-If you have docker installed already, you can just:
-
-```sh
-docker run -it freedomben/pacvim [LEVEL_NUMBER] [MODE]
-```
-
-### Building the docker image from source
-
-From the project root, build the image:
-
-```sh
-docker build -t freedomben/pacvim .
-```
-
-Push to docker hub:
-
-```sh
-docker push freedomben/pacvim
 ```
 
 To play, run (from anywhere):
 ```
-$ pacvim [LEVEL_NUMBER] [MODE]
+$ mazevim [LEVEL_NUMBER] [MODE]
 ```
 You may specify the starting level and mode (`n` and `h` for normal/hard). Default mode is hard:
 ```
-$ pacvim 8 n
+$ mazevim 8 n
 ```
 
 To Uninstall, navigate to the folder where you cloned this repo, and type `make uninstall` <br>
@@ -87,9 +62,9 @@ Note: this game may not install/compile properly without gcc version 4.8.X or hi
 
 # How To Play
 
-The objective of PacVim is very similar to PacMan.
+The objective of MazeVim is very similar to PacMan.
 You must run over all the characters on the screen while avoiding the ghosts (red `G`).
-PacVim has two special obstacles:
+MazeVim has two special obstacles:
 
 1. You cannot move into the walls (yellow color).  You must use vim motions to jump over them.
 
@@ -134,8 +109,8 @@ have less than 0 lives, you lose the entire game.
 
 # Create Your Own Map! 
 
-The maps for <b>PacVim</b> are loaded from text files from
-the <i>/usr/local/share/pacvim-maps</i> folder. After installing, you may, instead, use the *maps* folder (where you installed
+The maps for <b>MazeVim</b> are loaded from text files from
+the <i>/usr/local/share/mazevim-maps</i> folder. After installing, you may, instead, use the *maps* folder (where you installed
 the game) by calling `make MAPDIR=maps`.
 
 The name of each text file must be
@@ -238,12 +213,12 @@ loop allows the player to continuously input keystrokes. When a keystroke is inp
 
 
 <h2>LICENSE</h2>
-PacVim is free software: you can redistribute it and/or modify
+MazeVim is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License (LGPL) as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-PacVim is distributed in the hope that it will be useful,
+MazeVim is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
