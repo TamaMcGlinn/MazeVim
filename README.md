@@ -6,7 +6,11 @@ and in the process, get used to the basic vim movement commands.
 PacVim is a lot more challenging; MazeVim allows the absolute Vim beginner to learn HJKL movement
 without necessarily the added stress of having to avoid ghosts - however, you can still add them to the maps if you want.
 
-Edit `maps/*.txt` to construct the mazes; walls are '#' while ' ' are passages. The goal is to get to the x.
+Maps are loaded from the first parameter, and are in .txt format; walls are '#' while ' ' are passages. The goal is to get to the x.
+For example, run: mazevim [maze_example.txt](/maze_example.txt):
+
+![](maze_example_screenshot.png)
+
 Movement commands:
 
 ```

@@ -595,53 +595,25 @@ bool checkParams(int argc, char** argv) {
 
 int main(int argc, char** argv)
 {
+	if (argc <= 1) {
+	  cerr << "Pass a .txt file to load a level" << endl;
+	  return 1;
+	}
+
 	// Setup
 	WINDOW* win = initscr();
 	defineColors();
 	noecho(); // dont print anything to the screen
 
-	// Look for cmd line args
-	// Any cmd line args will change the CURRENT_LEVEL
-	// at the start of the game.
-	// EG: ./pacvim 4 --> player starts on 4th level
-
-	if( ! checkParams(argc, argv) )
-	{
-		// program called with invalid arguments
-		return 0;
-	}
-
 	while(LIVES >= 0) {
-		string mapName = MAPS_LOCATION "/map";
-		
-		// convert CURRENT_LEVEL to string, and load
-		std::stringstream ss;
-		ss << CURRENT_LEVEL;
-		
-		mapName += ss.str(); // add it to mapName
-		mapName += ".txt"; // must be .txt
+		string mapName = string(argv[1]);
 		init(mapName.c_str());
 		if(GAME_WON == -1) {
-			CURRENT_LEVEL--;
 			GAME_WON = 0;
 			TOTAL_POINTS = 0;
 		}
 		else {
-			if(GAME_WON == -1) {
-				CURRENT_LEVEL--; // lost the game, repeat the level
-			}
-			else if ((CURRENT_LEVEL % 3) == 0) {
-				LIVES++; // gain a life every 3 levels
-			}
-				
-			GAME_WON = 0;
-			TOTAL_POINTS = 0;
-		}
-		CURRENT_LEVEL++;
-		// Start from beginning now
-		if(CURRENT_LEVEL > NUM_OF_LEVELS) {
-			CURRENT_LEVEL = 0;
-			THINK_MULTIPLIER *= 0.8;
+		  break;
 		}
 	}	
 	//endwin();
